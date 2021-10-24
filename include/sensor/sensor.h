@@ -27,11 +27,20 @@
 #define INCLUDE_SENSOR_SENSOR_H_
 
 #include <concepts>
+#include <variant>
+#include "core/core.h"
 
 namespace bfs {
 
+struct SensorConfig {
+  int16_t sampling_rate_hz;
+  int32_t dev_opt;
+  std::variant<TwoWire *, SPIClass *, HardwareSerial *> port;
+};
+
 template<typename T>
-concept Sensor = requires(T sensor) {
+concept Sensor = requires(T sensor, const SensorConfig &ref) {
+  { sensor.Config(ref) } -> std::same_as<bool>;
   { sensor.Init() } -> std::same_as<bool>;
   { sensor.Read() } -> std::same_as<bool>;
 };  // NOLINT - gets confused with concepts and semicolon after braces

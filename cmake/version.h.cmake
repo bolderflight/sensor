@@ -23,26 +23,13 @@
 * IN THE SOFTWARE.
 */
 
-#include "sensor/sensor.h"
+#ifndef INCLUDE_VERSION_H_
+#define INCLUDE_VERSION_H_
 
-/* Example class compiant with the sensor interface */
-class SensorExample {
- public:
-  bool Config(const bfs::SensorConfig &ref) {}
-  bool Init() {}
-  bool Read() {}
-};
+#define PROJECT "@PROJECT@"
+#define PROJECT_VERSION "@PROJECT_VERSION@"
+#define PROJECT_VERSION_MAJOR "@PROJECT_VERSION_MAJOR@"
+#define PROJECT_VERSION_MINOR "@PROJECT_VERSION_MINOR@"
+#define PROJECT_VERSION_PATCH "@PROJECT_VERSION_PATCH@"
 
-/* Checking that SensorExample class meets the requirements of bfs::Sensor */
-static_assert(bfs::Sensor<SensorExample>,
-  "Sensor example should conform to the sensor interface");
-
-/* Function that is templated against the sensor interface */
-template<bfs::Sensor T>
-bool InitSensor(T sensor) {
-  return sensor.Init();
-}
-
-int main() {
-
-}
+#endif  // INCLUDE_VERSION_H_
