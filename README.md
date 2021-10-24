@@ -1,4 +1,4 @@
-# pres
+# sensor
 Defines a common interface for sensors.
    * [License](LICENSE.md)
    * [Changelog](CHANGELOG.md)
