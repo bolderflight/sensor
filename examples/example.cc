@@ -24,11 +24,13 @@
 */
 
 #include "sensor/sensor.h"
+#include "imu/imu.h"
 
 /* Example class compiant with the sensor interface */
 class SensorExample {
  public:
   bool Config(const bfs::SensorConfig &ref) {}
+  bool Config(const bfs::ImuConfig &ref) {}
   bool Init() {}
   bool Read() {}
 };

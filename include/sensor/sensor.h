@@ -2,7 +2,7 @@
 * Brian R Taylor
 * brian.taylor@bolderflight.com
 * 
-* Copyright (c) 2021 Bolder Flight Systems Inc
+* Copyright (c) 2022 Bolder Flight Systems Inc
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the “Software”), to
@@ -28,11 +28,13 @@
 
 #include <concepts>
 #include <variant>
+#include <optional>
 #include "core/core.h"
 
 namespace bfs {
 
 struct SensorConfig {
+  std::optional<int8_t> dev_id;
   int16_t sampling_rate_hz;
   int32_t dev_opt;
   std::variant<TwoWire *, SPIClass *, HardwareSerial *> port;

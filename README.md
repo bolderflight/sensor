@@ -1,4 +1,8 @@
-# sensor
+[![Pipeline](https://gitlab.com/bolderflight/software/sensor/badges/main/pipeline.svg)](https://gitlab.com/bolderflight/software/sensor/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+![Bolder Flight Systems Logo](img/logo-words_75.png)
+
+# Sensor
 Defines a common interface for sensors.
    * [License](LICENSE.md)
    * [Changelog](CHANGELOG.md)
@@ -32,6 +36,7 @@ This library is within the namespace *bfs*.
 
 | Name | Description |
 | --- | --- |
+| std::optional<int8_t> dev_id | Some libraries support multiple devices (i.e. the Ams5915 library supports many transducers with different pressure ranges), this enables specifying the device |
 | int16_t sampling_rate_hz | The sampling rate in Hz. |
 | int32_t dev_opt | For I2C communication, this should be the I2C address. For SPI communication, this should be the chip select pin. For serial communication, this is the baud rate. |
 | std::variant<TwoWire *, SPIClass *, HardwareSerial *> port | A pointer to the interface to communicate with the sensor |
