@@ -21,11 +21,20 @@ CMake is used to build this library, which is exported as a library target calle
 The library can be also be compiled stand-alone using the CMake idiom of creating a *build* directory and then, from within that directory issuing:
 
 ```
-cmake ..
+cmake .. -DMCU=MK66FX1M0
 make
 ```
 
-This will build the library and an example called *example*, which has source code located in *examples/example.cc*.
+This will build the library and an example called *example*, which has source code located in *examples/example.cc*. Notice that the *cmake* command includes a define specifying the microcontroller the code is being compiled for. This is required to correctly configure the code, CPU frequency, and compile/linker options. The available MCUs are:
+   * MK20DX128
+   * MK20DX256
+   * MK64FX512
+   * MK66FX1M0
+   * MKL26Z64
+   * IMXRT1062_T40
+   * IMXRT1062_T41
+
+These are known to work with the same packages used in Teensy products. Also switching packages is known to work well, as long as it's only a package change.
 
 ## Namespace
 This library is within the namespace *bfs*.
