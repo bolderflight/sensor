@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.1.1
+- Removed some testing includes
+
 ## v2.1.0
 - Added an optional dev_id (i.e. device ID), for specifying a specific sensor for drivers that support multiple sensors.
 - Updated CMake to use the mcu_support repo

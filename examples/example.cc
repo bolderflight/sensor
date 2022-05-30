@@ -2,7 +2,7 @@
 * Brian R Taylor
 * brian.taylor@bolderflight.com
 * 
-* Copyright (c) 2021 Bolder Flight Systems Inc
+* Copyright (c) 2022 Bolder Flight Systems Inc
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the “Software”), to
@@ -24,13 +24,11 @@
 */
 
 #include "sensor/sensor.h"
-#include "imu/imu.h"
 
 /* Example class compiant with the sensor interface */
 class SensorExample {
  public:
   bool Config(const bfs::SensorConfig &ref) {}
-  bool Config(const bfs::ImuConfig &ref) {}
   bool Init() {}
   bool Read() {}
 };
